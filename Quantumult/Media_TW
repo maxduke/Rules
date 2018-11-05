@@ -1,0 +1,14 @@
+# 2018年11月5日 17:25
+
+// Bahamut
+USER-AGENT,Anime*,选择Media_TW的Policy
+DOMAIN-SUFFIX,bahamut.com.tw,选择Media_TW的Policy
+DOMAIN-SUFFIX,gamer.com.tw,选择Media_TW的Policy
+DOMAIN-SUFFIX,hinet.net,选择Media_TW的Policy
+
+// CHOCO TV
+USER-AGENT,TwDramas*,选择Media_TW的Policy
+DOMAIN-SUFFIX,chocotv.com.tw,选择Media_TW的Policy
+
+// Imkan
+DOMAIN-SUFFIX,imkan.tv,选择Media_TW的Policy
