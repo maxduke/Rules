@@ -1,0 +1,25 @@
+// AbemaTV
+USER-AGENT,*AbemaTV*
+DOMAIN,linear-abematv.akamaized.net,force-remote-dns
+DOMAIN-SUFFIX,app-adforce.jp,force-remote-dns
+DOMAIN-SUFFIX,abema.io,force-remote-dns
+DOMAIN-SUFFIX,abema.tv,force-remote-dns
+DOMAIN-SUFFIX,akamaized.net,force-remote-dns
+DOMAIN-SUFFIX,ameba.jp,force-remote-dns
+DOMAIN-SUFFIX,hayabusa.io,force-remote-dns
+IP-CIDR,35.189.128.0/19,no-resolve
+// DMM
+DOMAIN-SUFFIX,dmm.co.jp
+DOMAIN-SUFFIX,dmm.com
+// GYAO
+USER-AGENT,*GYAO*
+DOMAIN-SUFFIX,yahoo.co.jp,force-remote-dns
+DOMAIN-SUFFIX,yahooapis.jp,force-remote-dns
+DOMAIN-SUFFIX,yimg.jp,force-remote-dns
+DOMAIN-SUFFIX,tidaltv.com,force-remote-dns
+// NicoNico
+DOMAIN-SUFFIX,nicovideo.jp
+// TVer
+USER-AGENT,*TVer*
+DOMAIN,tver-api-data.s3.amazonaws.com,force-remote-dns
+DOMAIN-SUFFIX,tver.jp,force-remote-dns
