@@ -1,4 +1,6 @@
 // Youtube
+USER-AGENT,*youTube*
+USER-AGENT,YouTube*
 DOMAIN-KEYWORD,youtube
 DOMAIN-SUFFIX,googlevideo.com
 DOMAIN-SUFFIX,gvt2.com
