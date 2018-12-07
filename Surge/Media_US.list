@@ -2,10 +2,13 @@
 DOMAIN-SUFFIX,edgedatg.com
 DOMAIN-SUFFIX,go.com
 
-// Amazon
+// Amazon Prime Video
+USER-AGENT,InstantVideo.US*
 USER-AGENT,Prime%20Video*
+DOMAIN-SUFFIX,aiv-cdn.net
 DOMAIN-SUFFIX,amazonaws.com
 DOMAIN-SUFFIX,amazonvideo.com
+DOMAIN-SUFFIX,llnwd.net
 
 // Epicgames
 DOMAIN-KEYWORD,epicgames
