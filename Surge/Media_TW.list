@@ -11,6 +11,8 @@ DOMAIN-SUFFIX,chocotv.com.tw
 // Imkan
 DOMAIN-SUFFIX,imkan.tv
 
-// Vidol
+// Vidol & 动画疯
+USER-AGENT,Anime*
 USER-AGENT,Vidol*
+DOMAIN-SUFFIX,cdn.hinet.net
 DOMAIN-SUFFIX,vidol.tv
