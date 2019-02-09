@@ -12,3 +12,6 @@ USER-AGENT,ipastorel*
 DOMAIN-SUFFIX,devmyi.net
 DOMAIN-SUFFIX,devmyi.com
 DOMAIN-SUFFIX,ipahub.com
+// GFWExt
+DOMAIN-SUFFIX,redd.it
+DOMAIN-SUFFIX,readitlaterlist.com
