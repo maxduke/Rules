@@ -15,8 +15,15 @@ DOMAIN-KEYWORD,rthklive
 DOMAIN-SUFFIX,mytvsuper.com
 DOMAIN-SUFFIX,tvb.com
 
+// encoreTVB
+USER-AGENT,encoreTVB*
+DOMAIN-SUFFIX,encoretvb.com
+DOMAIN,content.jwplatform.com
+DOMAIN,videos-f.jwpsrv.com
+
 // viuTV
 USER-AGENT,OTT_iPhone*
 USER-AGENT,Viu*
 DOMAIN-SUFFIX,viu.com
 DOMAIN-SUFFIX,viu.tv
+DOMAIN,api.viu.now.com
