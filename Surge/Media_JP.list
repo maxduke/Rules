@@ -20,6 +20,9 @@ DOMAIN-SUFFIX,yahooapis.jp,force-remote-dns
 DOMAIN-SUFFIX,yimg.jp,force-remote-dns
 DOMAIN-SUFFIX,tidaltv.com,force-remote-dns
 
+// Hulu(フールー)
+DOMAIN-SUFFIX,happyon.jp
+
 // NicoNico
 DOMAIN-SUFFIX,nicovideo.jp
 
