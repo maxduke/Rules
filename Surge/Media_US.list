@@ -38,7 +38,6 @@ DOMAIN-SUFFIX,hbogo.com
 
 // Hulu
 USER-AGENT,Hulu*
-DOMAIN-SUFFIX,happyon.jp
 DOMAIN-SUFFIX,hulu.com
 DOMAIN-SUFFIX,huluim.com
 DOMAIN-SUFFIX,hulustream.com
@@ -58,6 +57,9 @@ DOMAIN-SUFFIX,nflxvideo.net
 
 // Pandora
 DOMAIN-SUFFIX,pandora.com
+// PBS
+USER-AGENT,PBS*
+DOMAIN-SUFFIX,pbs.org
 
 // SoundCloud
 USER-AGENT,SoundCloud*
@@ -75,3 +77,5 @@ DOMAIN-KEYWORD,youtube
 DOMAIN-SUFFIX,googlevideo.com
 DOMAIN-SUFFIX,gvt2.com
 DOMAIN-SUFFIX,youtu.be
+DOMAIN-SUFFIX,youtube.com
+DOMAIN,youtubei.googleapis.com
