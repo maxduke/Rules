@@ -29,6 +29,7 @@ DOMAIN-SUFFIX,ipinfo.io
 DOMAIN-SUFFIX,mstage.io
 DOMAIN-SUFFIX,now.com
 DOMAIN-SUFFIX,theplatform.com
+DOMAIN-SUFFIX,uplynk.com
 DOMAIN-SUFFIX,urlload.net
 
 // HBO
@@ -72,6 +73,7 @@ DOMAIN-SUFFIX,spoti.fi,force-remote-dns
 
 // Youtube
 USER-AGENT,*youTube*
+USER-AGENT,com.google.ios.youtube*
 USER-AGENT,YouTube*
 DOMAIN-KEYWORD,youtube
 DOMAIN-SUFFIX,googlevideo.com
