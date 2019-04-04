@@ -1,12 +1,13 @@
 // AbemaTV
 USER-AGENT,*AbemaTV*
-DOMAIN,linear-abematv.akamaized.net,force-remote-dns
-//DOMAIN-SUFFIX,app-adforce.jp,force-remote-dns
 DOMAIN-SUFFIX,abema.io,force-remote-dns
 DOMAIN-SUFFIX,abema.tv,force-remote-dns
-DOMAIN-SUFFIX,akamaized.net,force-remote-dns
 DOMAIN-SUFFIX,ameba.jp,force-remote-dns
 DOMAIN-SUFFIX,hayabusa.io,force-remote-dns
+DOMAIN,abematv.akamaized.net,force-remote-dns
+DOMAIN,ds-linear-abematv.akamaized.net,force-remote-dns
+DOMAIN,ds-vod-abematv.akamaized.net,force-remote-dns
+DOMAIN,linear-abematv.akamaized.net,force-remote-dns
 //IP-CIDR,35.189.128.0/19,no-resolve
 
 // DMM
