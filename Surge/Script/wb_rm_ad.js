@@ -40,3 +40,9 @@ if (url.indexOf(path4) != -1) {
     result = JSON.stringify(json_body);
 }
 result;
+
+/*******************************************************
+ *来源：https://github.com/yichahucha/surge/blob/master/wb_rm_ad.js
+ *http-response api.weibo.cn script-path=https://raw.githubusercontent.com/yichahucha/surge/master/wb_rm_ad.js
+ *hostname = api.weibo.cn
+ *******************************************************/
