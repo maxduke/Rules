@@ -14,3 +14,8 @@ if (url.indexOf(path) != -1) {
     result = JSON.stringify(jsbody);
 }
 result;
+
+/* ************************************************************
+ * 来源：https://github.com/Choler/Surge/blob/master/Music.js
+ * http-response ^http://vip1\.kuwo\.cn/vip/ script-path=https://raw.githubusercontent.com/Choler/Surge/master/Music.js
+ *************************************************************/
