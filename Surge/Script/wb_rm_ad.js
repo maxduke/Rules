@@ -1,12 +1,18 @@
-let path2 = '/2/statuses/';//Feed流广告
-let path3 = '/2/statuses/extend';//广告共享计划、相关推荐
-let path4 = '/2/comments/build_comments';//评论中相关内容、评论中推荐
+    
+let path2 = '/statuses/';
+let path3 = '/statuses/extend';
+let path4 = '/comments/build_comments';
+let path5 = '/photo/recommend_list';
+let path6 = '/stories/video_stream';
 var result = body;
 if (url.indexOf(path2) != -1) {
     var json_body = JSON.parse(body);
     if (url.indexOf(path3) != -1) { 
         delete json_body.trend
     }else {
+        if (json_body.trends) {
+            json_body.trends = [];
+        }
         var ad = json_body.ad;
         if (typeof(ad) != "undefined") {
             var statuses = json_body.statuses;
@@ -32,11 +38,30 @@ if (url.indexOf(path4) != -1) {
     for (let j = 0; j < datas.length; j++) {
         const element = datas[j];
         let type = element.type;
-        if (type!=5 && type!=1) {
+        if (type!=5 && type!=1 && type!=6) {
             new_datas.push(element);
         }
     }
     json_body.datas = new_datas;
+    result = JSON.stringify(json_body);
+}
+if (url.indexOf(path5) != -1) { 
+    var json_body = JSON.parse(body);
+    json_body.data = {};
+    result = JSON.stringify(json_body);
+}
+if (url.indexOf(path6) != -1) { 
+    var json_body = JSON.parse(body);
+    var segments = json_body.segments;
+    var new_segments = [];
+    for (let j = 0; j < segments.length; j++) {
+        const element = segments[j];
+        let is_ad = element.is_ad;
+        if (typeof(is_ad) == "undefined" || is_ad == false) {
+            new_segments.push(element);
+        }
+    }
+    json_body.segments = new_segments;
     result = JSON.stringify(json_body);
 }
 result;
