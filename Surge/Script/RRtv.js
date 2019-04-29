@@ -29,3 +29,9 @@ if (url.indexOf(path3) != -1) {
 }
 
 result;
+
+/*********************************************************
+ *来源：https://github.com/Choler/Surge/blob/master/RRtv.js
+ *http-response ^https?://api\.rr\.tv/ script-path= https://github.com/Choler/Surge/raw/master/RRtv.js
+ *hostname = api.rr.tv
+ ********************************************************/
