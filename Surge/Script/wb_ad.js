@@ -1,7 +1,8 @@
 /*
  * @repo: https://github.com/yichahucha/surge
  * @script: https://raw.githubusercontent.com/yichahucha/surge/master/wb_ad.js
- * @regular: ^https?:\/\/api\.weibo\.cn\/2\/(groups\/timeline|statuses\/unread|statuses\/extend|comments\/build_comments|photo\/recommend_list|stories\/video_stream|statuses\/positives\/get|stories/home_list)
+ * @doc: https://raw.githubusercontent.com/yichahucha/surge/master/README.md
+ * @regular: ^https?:\/\/api\.weibo\.cn\/2(\/groups\/timeline|\/statuses\/unread|\/statuses\/extend|\/comments\/build_comments|\/photo\/recommend_list|\/stories\/video_stream|\/statuses\/positives\/get|\/stories\/home_list|\/profile\/statuses|\/statuses\/friends\/timeline)
  */
 
 const path1 = "/groups/timeline";
@@ -12,8 +13,10 @@ const path5 = "/photo/recommend_list";
 const path6 = "/stories/video_stream";
 const path7 = "/statuses/positives/get";
 const path8 = "/stories/home_list";
-var result = body;
+const path9 = "/profile/statuses";
+const path10 = "/statuses/friends/timeline";
 
+var result = body;
 function is_likerecommend(title) {
     if (title && title.type && title.type == "likerecommend") {
         return true;
@@ -44,9 +47,13 @@ function filter_timeline() {
 
         let i = statuses.length;
         while (i--) {
-            const element = statuses[i];
+            let element = statuses[i];
             if (is_likerecommend(element.title)) {
                 statuses.splice(i, 1);
+            }
+            if (element.pic_bg_new) {
+                delete element.pic_bg_new;
+                delete element.pic_bg_type;
             }
         }
 
@@ -59,7 +66,6 @@ function filter_timeline() {
     if (obj.trends) {
         obj.trends = [];
     }
-
     result = JSON.stringify(obj);
 }
 
@@ -68,6 +74,10 @@ if (url.indexOf(path1) != -1) {
 }
 
 if (url.indexOf(path2) != -1) {
+    filter_timeline();
+}
+
+if (url.indexOf(path10) != -1) {
     filter_timeline();
 }
 
@@ -127,4 +137,19 @@ if (url.indexOf(path8) != -1) {
     result = JSON.stringify(obj);
 }
 
+if (url.indexOf(path9) != -1) {
+    let obj = JSON.parse(body);
+    let cards = obj.cards;
+    if (cards && cards.length > 0) {
+        let i = cards.length;
+        while (i--) {
+            let element = cards[i];
+            let card_group = element.card_group;
+            if (card_group && card_group.length > 0) {
+                cards.splice(i, 1);
+            }
+        }
+    }
+    result = JSON.stringify(obj);
+}
 result;
