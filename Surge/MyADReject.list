@@ -5,7 +5,7 @@ URL-REGEX,https?://app-api.niu.com/(v3/)?advertise?ment
 // 微信公众号文章最后评论之前广告
 URL-REGEX,^https:\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad\?f=
 // 工商银行启动页面广告
-URL-REGEX http://v.icbc.com.cn/userfiles/Resources/WAP/advertisement/
+URL-REGEX,http://v.icbc.com.cn/userfiles/Resources/WAP/advertisement/
 // 链家App去广告
 URL-REGEX,ljcdn.com\/materials\/appindexconf\/.*\.jpg
 URL-REGEX,https://app.api.lianjia.com/appAds/getAds
