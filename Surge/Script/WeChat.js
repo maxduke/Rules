@@ -1,10 +1,11 @@
-    
-var obj = JSON.parse(body);
-delete obj['advertisement_info'];
-JSON.stringify(obj);
+body = JSON.parse($response.body);
+body.advertisement_info = [];
+body = JSON.stringify(body);
+$done({body});
 
-/*************************************************************
- *来源：https://github.com/Choler/Surge/blob/master/WeChat.js
- *http-response ^https?://mp\.weixin\.qq\.com/ script-path=https://raw.githubusercontent.com/Choler/Surge/master/WeChat.js
- *hostname = mp.weixin.qq.com
- ************************************************************/
+/**********************************************************
+[Script]
+http-response ^https:\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad script-path=https://raw.githubusercontent.com/Choler/Surge/master/Script/WeChat.js,requires-body=true,max-size=131072
+[MITM]
+hostname = mp.weixin.qq.com
+**********************************************************/
