@@ -1,1 +1,2 @@
-URL-REGEX, https?://c.tieba.baidu.com/\w+/\w+/(sync|newRnSync|newlog|mlog)
+// 防止贴吧卡死
+URL-REGEX,https?://c.tieba.baidu.com/\w+/\w+/(sync|newRnSync|newlog|mlog)
