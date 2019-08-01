@@ -11,3 +11,7 @@ URL-REGEX,ljcdn.com\/materials\/appindexconf\/.*\.jpg
 URL-REGEX,https://app.api.lianjia.com/appAds/getAds
 // 华夏银行App去广告
 URL-REGEX,http:\/\/image.mc.hxb.com.cn\/.*\.jpg
+// 人人影视
+URL-REGEX,^https?:\/\/api\.rr\.tv\/(ad|getLastest),REJECT
+# 屏蔽更新提示
+URL-REGEX,"^https?:\/\/api\.rr\.tv\/.*(getAll|Version)$",REJECT
