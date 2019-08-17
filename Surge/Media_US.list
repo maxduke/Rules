@@ -70,14 +70,3 @@ USER-AGENT,*Spotify*
 DOMAIN-KEYWORD,spotify,force-remote-dns
 DOMAIN-SUFFIX,scdn.co,force-remote-dns
 DOMAIN-SUFFIX,spoti.fi,force-remote-dns
-
-// Youtube
-USER-AGENT,*youTube*
-USER-AGENT,com.google.ios.youtube*
-USER-AGENT,YouTube*
-DOMAIN-KEYWORD,youtube
-DOMAIN-SUFFIX,googlevideo.com
-DOMAIN-SUFFIX,gvt2.com
-DOMAIN-SUFFIX,youtu.be
-DOMAIN-SUFFIX,youtube.com
-DOMAIN,youtubei.googleapis.com
