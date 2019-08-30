@@ -18,7 +18,11 @@ URL-REGEX,"^https?:\/\/api\.rr\.tv\/.*(getAll|Version)$"
 //Weibo International
 USER-AGENT,Weibo%20intl*
 URL-REGEX,http://weibointl.api.weibo.com/portal.php\?a=get_coopen_ads
-//ZhiHu
-URL-REGEX,https://api.zhihu.com/(zst|commercial|ad-style-service|topstory/hot-lists|market/popover|search/(top|tab)|.*(recommendations|featured-comment-ad))
+
 //BiliBili
 URL-REGEX,https://app.bilibili.com/(pgc/season/rank/cn|x/v2/(rank.*rid=(168|5)|search/(defaultword|hot|recommend|resource)))
+
+//Zhihu
+URL-REGEX,https://(api|www).zhihu.com/(fringe|zst|commercial|real_time|ad-style-service|banners|topstory/hot-lists|market/popover|mqtt|.*(launch|featured-comment-ad|recommendations|community-ad)|search/(top|tab|preset)|ab)
+AND,((USER-AGENT,ZhihuHybrid*), (NOT,((DOMAIN-SUFFIX,zhihu.com))), (NOT,((DOMAIN-SUFFIX,zhimg.com))))
+AND,((USER-AGENT,osee2*), (NOT,((DOMAIN-SUFFIX,zhihu.com))), (NOT,((DOMAIN-SUFFIX,zhimg.com))))
