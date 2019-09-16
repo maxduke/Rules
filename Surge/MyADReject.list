@@ -22,6 +22,9 @@ URL-REGEX,http://weibointl.api.weibo.com/portal.php\?a=get_coopen_ads
 //BiliBili
 URL-REGEX,https://app.bilibili.com/(pgc/season/rank/cn|x/v2/(rank.*rid=(168|5)|search/(defaultword|hot|recommend|resource)))
 
+// 布丁漫画
+URL-REGEX,https?:\/\/bdapp\.4008109966\.net\/\/index\.php\/api\/App\/getAppVersion\?
+
 //Zhihu
 URL-REGEX,https://(api|www).zhihu.com/(fringe|zst|commercial|real_time|ad-style-service|banners|topstory/hot-lists|market/popover|mqtt|.*(launch|featured-comment-ad|recommendations|community-ad)|search/(top|tab|preset)|ab)
 AND,((USER-AGENT,ZhihuHybrid*), (NOT,((DOMAIN-SUFFIX,zhihu.com))), (NOT,((DOMAIN-SUFFIX,zhimg.com))))
