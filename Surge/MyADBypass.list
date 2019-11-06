@@ -2,3 +2,4 @@
 URL-REGEX,https?://c.tieba.baidu.com/\w+/\w+/(sync|newRnSync|newlog|mlog)
 // JD Price history script
 URL-REGEX,https?://api.m.jd.com/client.action?functionId=start
+URL-REGEX,^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=start
