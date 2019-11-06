@@ -1,2 +1,4 @@
 // 防止贴吧卡死
 URL-REGEX,https?://c.tieba.baidu.com/\w+/\w+/(sync|newRnSync|newlog|mlog)
+// JD Price history script
+URL-REGEX,api.m.jd.com/client.action?functionId=start,DIRECT
