@@ -25,10 +25,6 @@ URL-REGEX,https://app.bilibili.com/(pgc/season/rank/cn|x/v2/(rank.*rid=(168|5)|s
 // 布丁漫画 not wokring anymore?
 // URL-REGEX,https?:\/\/bdapp\.4008109966\.net\/\/index\.php\/api\/App\/getAppVersion\?
 
-//Zhihu
-URL-REGEX,https://(api|www).zhihu.com/(fringe|zst|commercial|real_time|ad-style-service|banners|topstory/hot-lists|market/popover|mqtt|.*(launch|featured-comment-ad|recommendations|community-ad)|search/(top|tab|preset)|ab)
-AND,((USER-AGENT,ZhihuHybrid*), (NOT,((DOMAIN-SUFFIX,zhihu.com))), (NOT,((DOMAIN-SUFFIX,zhimg.com))))
-AND,((USER-AGENT,osee2*), (NOT,((DOMAIN-SUFFIX,zhihu.com))), (NOT,((DOMAIN-SUFFIX,zhimg.com))))
 
 // 绕过App企业证书过期
 DOMAIN, ocsp.apple.com
