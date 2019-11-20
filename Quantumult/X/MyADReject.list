@@ -1,29 +1,2 @@
-// 去除知乎分享按钮上部广告
-//^https:\/\/pic1\.zhimg\.com\/70\/ url reject-img
-// 小牛电动App开启广告以及内部推荐购买广告
-^https?://app-api.niu.com/(v3/)?advertise?ment url reject-img
-// 微信公众号文章最后评论之前广告
-^https:\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad\?f= url reject-img
-// 工商银行启动页面广告
-^http://v.icbc.com.cn/userfiles/Resources/WAP/advertisement/ url reject-img
-// 链家App去广告
-^ljcdn.com\/materials\/appindexconf\/.*\.jpg url reject-img
-^https://app.api.lianjia.com/appAds/getAds url reject-img
-// 华夏银行App去广告
-^http:\/\/image.mc.hxb.com.cn\/.*\.jpg url reject-img
-// 人人影视
-^https?:\/\/api\.rr\.tv\/(ad|getLastest) url reject-img
-# 屏蔽更新提示
-^https?:\/\/api\.rr\.tv\/.*(getAll|Version)$ url reject-img
-//Weibo International
-^http://weibointl.api.weibo.com/portal.php\?a=get_coopen_ads url reject-img
-
-//BiliBili
-^https://app.bilibili.com/(pgc/season/rank/cn|x/v2/(rank.*rid=(168|5)|search/(defaultword|hot|recommend|resource))) url reject-img
-
-// 布丁漫画 not wokring anymore?
-// ^https?:\/\/bdapp\.4008109966\.net\/\/index\.php\/api\/App\/getAppVersion\? url reject-img
-
-
 // 绕过App企业证书过期
 DOMAIN-SUFFIX,ocsp.apple.com,REJECT
