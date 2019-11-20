@@ -1,5 +1,5 @@
 // 去除知乎分享按钮上部广告
-^https:\/\/pic1\.zhimg\.com\/70\/ url reject-img
+//^https:\/\/pic1\.zhimg\.com\/70\/ url reject-img
 // 小牛电动App开启广告以及内部推荐购买广告
 ^https?://app-api.niu.com/(v3/)?advertise?ment url reject-img
 // 微信公众号文章最后评论之前广告
