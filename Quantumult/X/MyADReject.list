@@ -1,2 +1,2 @@
 // 绕过App企业证书过期
-DOMAIN-SUFFIX,ocsp.apple.com,REJECT
+host,ocsp.apple.com,REJECT
