@@ -25,6 +25,37 @@ URL-REGEX,https://app.bilibili.com/(pgc/season/rank/cn|x/v2/(rank.*rid=(168|5)|s
 // 布丁漫画 not wokring anymore?
 // URL-REGEX,https?:\/\/bdapp\.4008109966\.net\/\/index\.php\/api\/App\/getAppVersion\?
 
+// Spotify Ads
+URL-REGEX,^https?://spclient.wg.spotify.com/ad-logic/*
+URL-REGEX,^https?://spclient.wg.spotify.com/ads/*
+URL-REGEX,^https?://spclient.wg.spotify.com/.+ad_slot
+URL-REGEX,^https?://spclient.wg.spotify.com/.+banners
+URL-REGEX,^https?://spclient.wg.spotify.com/.+canvases
+URL-REGEX,^https?://spclient.wg.spotify.com/.+cards
+URL-REGEX,^https?://spclient.wg.spotify.com/.+crashlytics
+URL-REGEX,^https?://spclient.wg.spotify.com/.+doubleclick.net
+URL-REGEX,^https?://spclient.wg.spotify.com/.+enabled-tracks
+URL-REGEX,^https?://spclient.wg.spotify.com/.+event
+URL-REGEX,^https?://spclient.wg.spotify.com/.+promoted_offer
+
+// Youtube Ads Test
+URL-REGEX,^https?:\/\/.+\.googlevideo\.com\/.+&oad
+URL-REGEX,^https?:\/\/.+\.googlevideo\.com\/.+ctier
+URL-REGEX,^https?:\/\/.+\.googlevideo\.com\/ptracking\?pltype=adhost
+URL-REGEX,^https?:\/\/.+\.googlevideo\.com\/videogoodput\?
+URL-REGEX,^https?:\/\/.+\.youtube\.com\/.+get_ads
+URL-REGEX,^https?:\/\/.+\.youtube\.com\/api\/stats\/.+adformat
+URL-REGEX,^https?:\/\/.+\.youtube\.com\/api\/stats\/ads
+URL-REGEX,^https?:\/\/.+\.youtube\.com\/error_204
+URL-REGEX,^https?:\/\/.+\.youtube\.com\/get_midroll
+URL-REGEX,^https?:\/\/.+\.youtube\.com\/pagead\/*
+URL-REGEX,^https?:\/\/.+\.youtube\.com\/ptracking\?
+URL-REGEX,^https?:\/\/play.googleapis.com/log*
+URL-REGEX,^https?:\/\/www.googleapis.com/adsmeasurement/*
+URL-REGEX,^https?:\/\/youtubei.googleapis.com/youtubei/.+ad_
+URL-REGEX,^https?:\/\/youtubei.googleapis.com/youtubei/.+log_
+URL-REGEX,^https?:\/\/api\d?\.tiktokv\.com\/api\/ad\/
+URL-REGEX,^https?:\/\/api\d?\.musical\.ly\/api\/ad\/
 
 // 绕过App企业证书过期
 DOMAIN, ocsp.apple.com
