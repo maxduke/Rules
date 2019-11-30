@@ -39,21 +39,21 @@ URL-REGEX,^https?://spclient.wg.spotify.com/.+event
 URL-REGEX,^https?://spclient.wg.spotify.com/.+promoted_offer
 
 // Youtube Ads Test
-URL-REGEX,^https?:\/\/.+\.googlevideo\.com\/.+&oad
-URL-REGEX,^https?:\/\/.+\.googlevideo\.com\/.+ctier
-URL-REGEX,^https?:\/\/.+\.googlevideo\.com\/ptracking\?pltype=adhost
-URL-REGEX,^https?:\/\/.+\.googlevideo\.com\/videogoodput\?
-URL-REGEX,^https?:\/\/.+\.youtube\.com\/.+get_ads
-URL-REGEX,^https?:\/\/.+\.youtube\.com\/api\/stats\/.+adformat
-URL-REGEX,^https?:\/\/.+\.youtube\.com\/api\/stats\/ads
-URL-REGEX,^https?:\/\/.+\.youtube\.com\/error_204
-URL-REGEX,^https?:\/\/.+\.youtube\.com\/get_midroll
-URL-REGEX,^https?:\/\/.+\.youtube\.com\/pagead\/*
-URL-REGEX,^https?:\/\/.+\.youtube\.com\/ptracking\?
-URL-REGEX,^https?:\/\/play.googleapis.com/log*
-URL-REGEX,^https?:\/\/www.googleapis.com/adsmeasurement/*
-URL-REGEX,^https?:\/\/youtubei.googleapis.com/youtubei/.+ad_
-URL-REGEX,^https?:\/\/youtubei.googleapis.com/youtubei/.+log_
+//URL-REGEX,^https?:\/\/.+\.googlevideo\.com\/.+&oad
+//URL-REGEX,^https?:\/\/.+\.googlevideo\.com\/.+ctier
+//URL-REGEX,^https?:\/\/.+\.googlevideo\.com\/ptracking\?pltype=adhost
+//URL-REGEX,^https?:\/\/.+\.googlevideo\.com\/videogoodput\?
+//URL-REGEX,^https?:\/\/.+\.youtube\.com\/.+get_ads
+//URL-REGEX,^https?:\/\/.+\.youtube\.com\/api\/stats\/.+adformat
+//URL-REGEX,^https?:\/\/.+\.youtube\.com\/api\/stats\/ads
+//URL-REGEX,^https?:\/\/.+\.youtube\.com\/error_204
+//URL-REGEX,^https?:\/\/.+\.youtube\.com\/get_midroll
+//URL-REGEX,^https?:\/\/.+\.youtube\.com\/pagead\/*
+//URL-REGEX,^https?:\/\/.+\.youtube\.com\/ptracking\?
+//URL-REGEX,^https?:\/\/play.googleapis.com/log*
+//URL-REGEX,^https?:\/\/www.googleapis.com/adsmeasurement/*
+//URL-REGEX,^https?:\/\/youtubei.googleapis.com/youtubei/.+ad_
+//URL-REGEX,^https?:\/\/youtubei.googleapis.com/youtubei/.+log_
 URL-REGEX,^https?:\/\/api\d?\.tiktokv\.com\/api\/ad\/
 URL-REGEX,^https?:\/\/api\d?\.musical\.ly\/api\/ad\/
 
