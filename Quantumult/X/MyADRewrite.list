@@ -1,3 +1,5 @@
+hostname = spclient.wg.spotify.com,*.googlevideo.com,*.youtube.com,play.googleapis.com,www.googleapis.com,youtubei.googleapis.com
+
 // Spotify ADs
 ^https?://spclient.wg.spotify.com/ad-logic/* url reject-img
 ^https?://spclient.wg.spotify.com/ads/* url reject-img
