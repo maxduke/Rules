@@ -3,11 +3,10 @@ New Banana video unlock vip
 app download link : 
 
 QX:
-^https?:\/\/server\.zhongjijulebu\.com\/ url script-response-body https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/File/xjsp.js
+^https?:\/\/server\.zhongjijulebu\.com\/ url script-response-body https://raw.githubusercontent.com/maxduke/Rules/master/Surge/Script/newbananavideo.js
 
 Surge4：
-http-response ^https?:\/\/server\.zhongjijulebu\.com\/ requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/File/xjsp.js
-
+http-response ^https?:\/\/server\.zhongjijulebu\.com\/ requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/maxduke/Rules/master/Surge/Script/newbananavideo.js
 Surge & QX MITM = server.zhongjijulebu.com
 */
 
