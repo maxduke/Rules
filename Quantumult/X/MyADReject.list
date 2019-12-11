@@ -1,2 +1,3 @@
 // 绕过App企业证书过期
 host,ocsp.apple.com,REJECT
+host,ocsp.digicert.com,REJECT
