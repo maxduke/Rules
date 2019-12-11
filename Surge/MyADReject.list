@@ -59,3 +59,4 @@ URL-REGEX,^https?:\/\/api\d?\.musical\.ly\/api\/ad\/
 
 // 绕过App企业证书过期
 DOMAIN, ocsp.apple.com
+DOMAIN, ocsp.digicert.com
