@@ -25,7 +25,7 @@ function sign() {
     for (const bar of response.body.matchAll(regex)) {
       signBar(bar)
     }
-  })；
+  })
   $done({})
 
 }
