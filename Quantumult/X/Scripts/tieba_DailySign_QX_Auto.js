@@ -26,7 +26,6 @@ function sign() {
       signBar(bar)
     }
   })
-  $done({})
 
 }
 
