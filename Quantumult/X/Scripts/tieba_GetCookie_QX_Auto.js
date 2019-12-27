@@ -3,7 +3,7 @@ Tieba Check in Get Cookie. by MaxDuke
 Need to manually log in to the http://tieba.baidu.com to get cookie. When QX pops up to get a successful notification, you can disable the script.
 Note that the following config is only a local script configuration, please put this script into Quantumult X/Script
 [rewrite_local]
-^http://tieba.baidu.com url script-response-body tieba_GetCookie_QX_Auto
+^http://tieba.baidu.com url script-response-body tieba_GetCookie_QX_Auto.js
 MITM = tieba.baidu.com
 */
 
