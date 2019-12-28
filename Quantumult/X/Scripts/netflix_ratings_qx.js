@@ -6,7 +6,7 @@ Modified by MaxDuke for QuantumultX support
 const consoleLog = false;
 const imdbApikeyCacheKey = "IMDbApikey";
 const netflixTitleCacheKey = "NetflixTitle";
-
+/*
 if ($request.headers) {
     let url = $request.url;
     const urlDecode = decodeURIComponent(url);
@@ -23,8 +23,10 @@ if ($request.headers) {
     url += "&path=" + encodeURIComponent(`[${videos[0]},"details"]`);
     $done({ url });
 } else {
+*/
+if (response.body) {	
     var IMDbApikeys = IMDbApikeys();
-	var IMDbApikey = $prefs.valueForKey(imdbApikeyCacheKey);
+    var IMDbApikey = $prefs.valueForKey(imdbApikeyCacheKey);
     if (!IMDbApikey) updateIMDbApikey();
     let obj = JSON.parse($response.body);
     if (consoleLog) $notify("Netflix Original Body", "", $response.body);
