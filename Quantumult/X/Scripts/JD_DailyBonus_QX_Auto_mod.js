@@ -219,27 +219,27 @@ function JingRongSteel(JDBean, JDSteel, JRBean) {
           var leng = "" + cc.resultData.resBusiData.actualTotalRewardsValue
           if (leng.length == 1) {
             var JRSteel = "京东金融-钢镚: 签到成功, 明细: " + "0.0" + cc.resultData.resBusiData.actualTotalRewardsValue + "钢镚 💰" + "\n"
-            JingDongShake(JDBean, JDSteel, JRBean, JRSteel)
+            JingDongShake1(JDBean, JDSteel, JRBean, JRSteel)
           } else {
             var JRSteel = "京东金融-钢镚: 签到成功, 明细: " + "0." + cc.resultData.resBusiData.actualTotalRewardsValue + "钢镚 💰" + "\n"
-            JingDongShake(JDBean, JDSteel, JRBean, JRSteel)
+            JingDongShake1(JDBean, JDSteel, JRBean, JRSteel)
           }
         } else {
           var JRSteel = "京东金融-钢镚: 签到成功, 明细: 显示接口待更新 ⚠️" + "\n"
-          JingDongShake(JDBean, JDSteel, JRBean, JRSteel)
+          JingDongShake1(JDBean, JDSteel, JRBean, JRSteel)
         }
       } else {
         console.log("京东金融-钢镚签到失败response: \n" + response.body)
         if (response.body.match(/已经领取/)) {
           var JRSteel = "京东金融-钢镚: 签到失败, 原因: 已签过 ⚠️" + "\n"
-          JingDongShake(JDBean, JDSteel, JRBean, JRSteel)
+          JingDongShake1(JDBean, JDSteel, JRBean, JRSteel)
         } else {
           if (response.body.match(/未实名/)) {
             var JRSteel = "京东金融-钢镚: 签到失败, 原因: 账号未实名 ⚠️" + "\n"
-            JingDongShake(JDBean, JDSteel, JRBean, JRSteel)
+            JingDongShake1(JDBean, JDSteel, JRBean, JRSteel)
           } else {
           var JRSteel = "京东金融-钢镚: 需修正‼️日志发至TG:@NobyDa_bot" + "\n"
-          JingDongShake(JDBean, JDSteel, JRBean, JRSteel)
+          JingDongShake1(JDBean, JDSteel, JRBean, JRSteel)
           }
         }
       }
