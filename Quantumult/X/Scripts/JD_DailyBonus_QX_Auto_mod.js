@@ -310,32 +310,32 @@ function JingDongShake1(JDBean, JDSteel, JRBean, JRSteel) {
     $task.fetch(JDSh).then(response => {
       var cc = JSON.parse(response.body)
       if (response.body.match(/prize/)) {
-        console.log("京东商城-摇一摇1签到成功response: \n" + response.body)
+        console.log("京东商城-摇一摇签到成功response: \n" + response.body)
         if (cc.data.prizeBean) {
-          var JDShake1 = "京东商城-摇摇1: 签到成功, 明细: " + cc.data.prizeBean.count + "京豆 🐶"
+          var JDShake1 = "京东商城-摇摇: 签到成功, 明细: " + cc.data.prizeBean.count + "京豆 🐶"
 		  JingDongShake2(JDBean, JDSteel, JRBean, JRSteel, JDShake1)
         } else {
           if (cc.data.prizeCoupon) {
-            var JDShake1 = "京东商城-摇摇1: 获得满" + cc.data.prizeCoupon.quota + "减" + cc.data.prizeCoupon.discount + "优惠券→ " + cc.data.prizeCoupon.limitStr
+            var JDShake1 = "京东商城-摇摇: 获得满" + cc.data.prizeCoupon.quota + "减" + cc.data.prizeCoupon.discount + "优惠券→ " + cc.data.prizeCoupon.limitStr
 			JingDongShake2(JDBean, JDSteel, JRBean, JRSteel, JDShake1)
           } else {
-            var JDShake1 = "京东商城-摇摇1: 需修正‼️日志发至TG:@NobyDa_bot"
+            var JDShake1 = "京东商城-摇摇: 需修正‼️日志发至TG:@NobyDa_bot"
 			JingDongShake2(JDBean, JDSteel, JRBean, JRSteel, JDShake1)
           }
         }
       } else {
-        console.log("京东商城-摇一摇1签到失败response: \n" + response.body)
+        console.log("京东商城-摇一摇签到失败response: \n" + response.body)
         if (response.body.match(/true/)) {
-          var JDShake1 = "京东商城-摇摇1: 签到成功, 明细: 无奖励 🐶"
+          var JDShake1 = "京东商城-摇摇: 签到成功, 明细: 无奖励 🐶"
 		  JingDongShake2(JDBean, JDSteel, JRBean, JRSteel, JDShake1)
         } else {
-          var JDShake1 = "京东商城-摇摇1: 签到失败, 原因: 已摇过 ⚠️"
+          var JDShake1 = "京东商城-摇摇: 签到失败, 原因: 已摇过 ⚠️"
 		  JingDongShake2(JDBean, JDSteel, JRBean, JRSteel, JDShake1)
         }
       }
     }, reason => {
-      var JDShake = "京东商城-摇摇1: 签到接口请求失败 ‼️‼️"
-      $notify("京东商城-摇一摇1-请求失败原因:", "", reason.error)
+      var JDShake = "京东商城-摇摇: 签到接口请求失败 ‼️‼️"
+      $notify("京东商城-摇一摇-请求失败原因:", "", reason.error)
 	  JingDongShake2(JDBean, JDSteel, JRBean, JRSteel, JDShake1)
     });
   }, 700)
@@ -354,32 +354,32 @@ function JingDongShake2(JDBean, JDSteel, JRBean, JRSteel, JDShake1) {
     $task.fetch(JDSh).then(response => {
       var cc = JSON.parse(response.body)
       if (response.body.match(/prize/)) {
-        console.log("京东商城-摇一摇2签到成功response: \n" + response.body)
+        console.log("京东商城-摇一摇签到成功response: \n" + response.body)
         if (cc.data.prizeBean) {
-          var JDShake2 = "京东商城-摇摇2: 签到成功, 明细: " + cc.data.prizeBean.count + "京豆 🐶"
+          var JDShake2 = "京东商城-摇摇: 签到成功, 明细: " + cc.data.prizeBean.count + "京豆 🐶"
 		  JingDongShake3(JDBean, JDSteel, JRBean, JRSteel, JDShake1, JDShake2)
         } else {
           if (cc.data.prizeCoupon) {
-            var JDShake2 = "京东商城-摇摇2: 获得满" + cc.data.prizeCoupon.quota + "减" + cc.data.prizeCoupon.discount + "优惠券→ " + cc.data.prizeCoupon.limitStr
+            var JDShake2 = "京东商城-摇摇: 获得满" + cc.data.prizeCoupon.quota + "减" + cc.data.prizeCoupon.discount + "优惠券→ " + cc.data.prizeCoupon.limitStr
 			JingDongShake3(JDBean, JDSteel, JRBean, JRSteel, JDShake1, JDShake2)
           } else {
-            var JDShake2 = "京东商城-摇摇2: 需修正‼️日志发至TG:@NobyDa_bot"
+            var JDShake2 = "京东商城-摇摇: 需修正‼️日志发至TG:@NobyDa_bot"
             JingDongShake3(JDBean, JDSteel, JRBean, JRSteel, JDShake1, JDShake2)
           }
         }
       } else {
-        console.log("京东商城-摇一摇2签到失败response: \n" + response.body)
+        console.log("京东商城-摇一摇签到失败response: \n" + response.body)
         if (response.body.match(/true/)) {
-          var JDShake2 = "京东商城-摇摇2: 签到成功, 明细: 无奖励 🐶"
+          var JDShake2 = "京东商城-摇摇: 签到成功, 明细: 无奖励 🐶"
 		  JingDongShake3(JDBean, JDSteel, JRBean, JRSteel, JDShake1, JDShake2)
         } else {
-          var JDShake2 = "京东商城-摇摇2: 签到失败, 原因: 已摇过 ⚠️"
+          var JDShake2 = "京东商城-摇摇: 签到失败, 原因: 已摇过 ⚠️"
 		  JingDongShake3(JDBean, JDSteel, JRBean, JRSteel, JDShake1, JDShake2)
         }
       }
     }, reason => {
-      var JDShake2 = "京东商城-摇摇2: 签到接口请求失败 ‼️‼️"
-      $notify("京东商城-摇一摇2-请求失败原因:", "", reason.error)
+      var JDShake2 = "京东商城-摇摇: 签到接口请求失败 ‼️‼️"
+      $notify("京东商城-摇一摇-请求失败原因:", "", reason.error)
 	  JingDongShake3(JDBean, JDSteel, JRBean, JRSteel, JDShake1, JDShake2)
     });
   }, 700)
@@ -398,32 +398,32 @@ function JingDongShake3(JDBean, JDSteel, JRBean, JRSteel, JDShake1, JDShake2) {
     $task.fetch(JDSh).then(response => {
       var cc = JSON.parse(response.body)
       if (response.body.match(/prize/)) {
-        console.log("京东商城-摇一摇3签到成功response: \n" + response.body)
+        console.log("京东商城-摇一摇签到成功response: \n" + response.body)
         if (cc.data.prizeBean) {
-          var JDShake3 = "京东商城-摇摇3: 签到成功, 明细: " + cc.data.prizeBean.count + "京豆 🐶"
+          var JDShake3 = "京东商城-摇摇: 签到成功, 明细: " + cc.data.prizeBean.count + "京豆 🐶"
           JRDoubleSign(JDBean, JDSteel, JRBean, JRSteel, JDShake1, JDShake2, JDShake3)
         } else {
           if (cc.data.prizeCoupon) {
-            var JDShake3 = "京东商城-摇摇3: 获得满" + cc.data.prizeCoupon.quota + "减" + cc.data.prizeCoupon.discount + "优惠券→ " + cc.data.prizeCoupon.limitStr
+            var JDShake3 = "京东商城-摇摇: 获得满" + cc.data.prizeCoupon.quota + "减" + cc.data.prizeCoupon.discount + "优惠券→ " + cc.data.prizeCoupon.limitStr
             JRDoubleSign(JDBean, JDSteel, JRBean, JRSteel, JDShake1, JDShake2, JDShake3)
           } else {
-            var JDShake3 = "京东商城-摇摇3: 需修正‼️日志发至TG:@NobyDa_bot"
+            var JDShake3 = "京东商城-摇摇: 需修正‼️日志发至TG:@NobyDa_bot"
             JRDoubleSign(JDBean, JDSteel, JRBean, JRSteel, JDShake1, JDShake2, JDShake3)
           }
         }
       } else {
-        console.log("京东商城-摇一摇3签到失败response: \n" + response.body)
+        console.log("京东商城-摇一摇签到失败response: \n" + response.body)
         if (response.body.match(/true/)) {
-          var JDShake3 = "京东商城-摇摇3: 签到成功, 明细: 无奖励 🐶"
+          var JDShake3 = "京东商城-摇摇: 签到成功, 明细: 无奖励 🐶"
           JRDoubleSign(JDBean, JDSteel, JRBean, JRSteel, JDShake1, JDShake2, JDShake3)
         } else {
-          var JDShake3 = "京东商城-摇摇3: 签到失败, 原因: 已摇过 ⚠️"
+          var JDShake3 = "京东商城-摇摇: 签到失败, 原因: 已摇过 ⚠️"
           JRDoubleSign(JDBean, JDSteel, JRBean, JRSteel, JDShake1, JDShake2, JDShake3)
         }
       }
     }, reason => {
-      var JDShake3 = "京东商城-摇摇3: 签到接口请求失败 ‼️‼️"
-      $notify("京东商城-摇一摇3-请求失败原因:", "", reason.error)
+      var JDShake3 = "京东商城-摇摇: 签到接口请求失败 ‼️‼️"
+      $notify("京东商城-摇一摇-请求失败原因:", "", reason.error)
       JRDoubleSign(JDBean, JDSteel, JRBean, JRSteel, JDShake1, JDShake2, JDShake3)
     });
   }, 700)
