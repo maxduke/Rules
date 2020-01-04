@@ -7,7 +7,7 @@ sign()
 
 function sign() {
   signTieba()
-  signWenku()
+  //signWenku()
   signZhidao()
 }
 
@@ -55,8 +55,17 @@ function signTieba() {
                     signinfo.successCnt += 1
                     chavy.log(`[${cookieName}] \"${bar.forum_name}\"签到结果: 成功`)
                   } else {
-                    signinfo.failedCnt += 1
-                    chavy.log(`[${cookieName}] \"${bar.forum_name}\"签到结果: 失败, 编码: ${signresult.no}, 原因: ${signresult.error}`)
+                    signBar(bar, tbs, (error, response, data) => {
+                      let signresult = JSON.parse(data)
+                      if (signresult.no == 0 || signresult.no == 1011) {
+                        signinfo.signedCnt += 1
+                        signinfo.successCnt += 1
+                        chavy.log(`[${cookieName}] \"${bar.forum_name}\"签到结果: 成功`)
+                      } else {
+                        signinfo.failedCnt += 1
+                        chavy.log(`[${cookieName}] \"${bar.forum_name}\"签到结果: 失败, 编码: ${signresult.no}, 原因: ${signresult.error}`)
+                      }
+                    })
                   }
                 })
               }
@@ -150,7 +159,7 @@ function check(forums, signinfo, checkms = 0) {
     chavy.msg(title, subTitle, detail)
     chavy.done()
   } else {
-    if (checkms > 9000) {
+    if (checkms > 15000) {
       subTitle = `签到结果: 超时退出 (请重试)`
       chavy.log(`${title}, ${subTitle}, ${detail}`)
       chavy.msg(title, subTitle, detail)
