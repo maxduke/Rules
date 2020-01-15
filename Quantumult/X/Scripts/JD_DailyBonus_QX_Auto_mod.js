@@ -494,7 +494,7 @@ function JingDongShake1(JDBean, JDturn, JRBean, JRSteel) {
             } else {
               if (data.match(/(无免费|8000005)/)) {
                 const JDShake3 = "京东商城-摇摇: 签到失败, 原因: 已摇过 ⚠️"
-                JRDoubleSign(JDBean, JDturn, JRBean, JRSteel, JDShake1, JDShake2), JDShake3
+                JRDoubleSign(JDBean, JDturn, JRBean, JRSteel, JDShake1, JDShake2, JDShake3)
               } else if (data.match(/(未登录|101)/)) {
                 const JDShake3 = "京东商城-摇摇: 签到失败, 原因: Cookie失效‼️"
                 JRDoubleSign(JDBean, JDturn, JRBean, JRSteel, JDShake1, JDShake2, JDShake3)
