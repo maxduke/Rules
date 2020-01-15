@@ -260,7 +260,7 @@ function JingRongSteel(JDBean, JDturn, JRBean) {
     $nobyda.post(JRSUrl, function(error, response, data) {
       if (error) {
         const JRSteel = "京东金融-钢镚: 签到接口请求失败 ‼️‼️" + "\n"
-        JingDongShake(JDBean, JDturn, JRBean, JRSteel)
+        JingDongShake1(JDBean, JDturn, JRBean, JRSteel)
       } else {
         const cc = JSON.parse(data)
         if (data.match(/\"resBusiCode\":0/)) {
@@ -269,31 +269,31 @@ function JingRongSteel(JDBean, JDturn, JRBean) {
             const leng = "" + cc.resultData.resBusiData.actualTotalRewardsValue
             if (leng.length == 1) {
               const JRSteel = "京东金融-钢镚: 签到成功, 明细: " + "0.0" + cc.resultData.resBusiData.actualTotalRewardsValue + "钢镚 💰" + "\n"
-              JingDongShake(JDBean, JDturn, JRBean, JRSteel)
+              JingDongShake1(JDBean, JDturn, JRBean, JRSteel)
             } else {
               const JRSteel = "京东金融-钢镚: 签到成功, 明细: " + "0." + cc.resultData.resBusiData.actualTotalRewardsValue + "钢镚 💰" + "\n"
-              JingDongShake(JDBean, JDturn, JRBean, JRSteel)
+              JingDongShake1(JDBean, JDturn, JRBean, JRSteel)
             }
           } else {
             const JRSteel = "京东金融-钢镚: 签到成功, 明细: 显示接口待更新 ⚠️" + "\n"
-            JingDongShake(JDBean, JDturn, JRBean, JRSteel)
+            JingDongShake1(JDBean, JDturn, JRBean, JRSteel)
           }
         } else {
           if (log) console.log("京东金融-钢镚签到失败response: \n" + data)
           if (data.match(/(已经领取|\"resBusiCode\":15)/)) {
             const JRSteel = "京东金融-钢镚: 签到失败, 原因: 已签过 ⚠️" + "\n"
-            JingDongShake(JDBean, JDturn, JRBean, JRSteel)
+            JingDongShake1(JDBean, JDturn, JRBean, JRSteel)
           } else {
             if (data.match(/未实名/)) {
               const JRSteel = "京东金融-钢镚: 签到失败, 原因: 账号未实名 ⚠️" + "\n"
-              JingDongShake(JDBean, JDturn, JRBean, JRSteel)
+              JingDongShake1(JDBean, JDturn, JRBean, JRSteel)
             } else {
               if (data.match(/(\"resultCode\":3|请先登录)/)) {
                 const JRSteel = "京东金融-钢镚: 签到失败, 原因: Cookie失效‼️" + "\n"
-                JingDongShake(JDBean, JDturn, JRBean, JRSteel)
+                JingDongShake1(JDBean, JDturn, JRBean, JRSteel)
               } else {
                 const JRSteel = "京东金融-钢镚: 需修正‼️日志发至TG:@NobyDa_bot" + "\n"
-                JingDongShake(JDBean, JDturn, JRBean, JRSteel)
+                JingDongShake1(JDBean, JDturn, JRBean, JRSteel)
               }
             }
           }
@@ -312,7 +312,6 @@ function JingDongShake(JDBean, JDturn, JRBean, JRSteel) {
         Cookie: KEY,
       }
     };
-
     $nobyda.get(JDSh, function(error, response, data) {
       if (error) {
         const JDShake = "京东商城-摇摇: 签到接口请求失败 ‼️‼️\n" + error
