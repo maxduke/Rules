@@ -41,8 +41,8 @@ var merge = {
   JRDSign: {success:0,fail:0,bean:0,steel:0,notify:''},
   JDGStore:{success:0,fail:0,bean:0,steel:0,notify:''},
   JDClocks:{success:0,fail:0,bean:0,steel:0,notify:''},
-  JDShake1: {success:0,fail:0,bean:0,steel:0,notify:'',Qbear:''}
-  JDShake2: {success:0,fail:0,bean:0,steel:0,notify:'',Qbear:''}
+  JDShake1: {success:0,fail:0,bean:0,steel:0,notify:'',Qbear:''},
+  JDShake2: {success:0,fail:0,bean:0,steel:0,notify:'',Qbear:''},
   JDShake3: {success:0,fail:0,bean:0,steel:0,notify:'',Qbear:''}
 }
 
