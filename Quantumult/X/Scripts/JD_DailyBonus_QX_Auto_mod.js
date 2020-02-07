@@ -519,7 +519,7 @@ function JingDongShake1() {
           }
           if (data.match(/totalBeanCount/)) {
             if (cc.data.luckyBox.totalBeanCount) {
-              merge.JDShake1.Qbear = cc.data.luckyBox.totalBeanCount
+              merge.JDShake.Qbear = cc.data.luckyBox.totalBeanCount
             }
           }
         }
@@ -584,7 +584,7 @@ function JingDongShake2() {
             }
             if (data.match(/totalBeanCount/)) {
               if (cc.data.luckyBox.totalBeanCount) {
-                merge.JDShake2.Qbear = cc.data.luckyBox.totalBeanCount
+                merge.JDShake.Qbear = cc.data.luckyBox.totalBeanCount
               }
             }
           }
@@ -649,7 +649,7 @@ function JingDongShake2() {
             }
             if (data.match(/totalBeanCount/)) {
               if (cc.data.luckyBox.totalBeanCount) {
-                merge.JDShake3.Qbear = cc.data.luckyBox.totalBeanCount
+                merge.JDShake.Qbear = cc.data.luckyBox.totalBeanCount
               }
             }
           }
