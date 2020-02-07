@@ -84,7 +84,7 @@ function notify() {
         fail += Number(merge[i].fail)
         notify += merge[i].notify ? "\n" + merge[i].notify : ""
       }
-      var JDbeans = merge.JDShake.Qbear ? merge.JDShake.Qbear + "个\n" : "获取失败\n"
+      var JDbeans = merge.JDShake3.Qbear ? merge.JDShake3.Qbear + "个\n" : "获取失败\n"
       var one = "【京东签到】:  成功" + success + "个, 失败: " + fail + "个\n"
       var two = "【签到总计】:  " + bean + "京豆, " + steel + "钢镚\n"
       var three = "【当前京豆】:  " + JDbeans
