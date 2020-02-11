@@ -309,7 +309,7 @@ function JingDongTurn1() {
                 if (log) console.log("京东商城-转盘签到失败response: \n" + data)
                 if (data.match(/chances\":\"1\".+未中奖/)) {
                   setTimeout(function() {
-                    JingDongTurn()
+                    JingDongTurn1()
                   }, 2000)
                 } else if (data.match(/chances\":\"0\".+未中奖/)) {
                   merge.JDTurn1.notify = "京东商城-转盘: 成功, 状态: 未中奖 🐶"
