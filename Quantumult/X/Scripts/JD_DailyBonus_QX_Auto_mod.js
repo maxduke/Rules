@@ -8,8 +8,8 @@ Due to the validity of cookie, if the script pops up a notification of cookie in
 Daily bonus script will be performed every day at 0:05 a.m. You can modify the execution time.
 If reprinted, please indicate the source. My TG channel @NobyDa
 
-Update 2020.2.12 1:00 v65 
-Effective number: 21
+Update 2020.2.13 21:00 v66 
+Effective number: 22
 ~~~~~~~~~~~~~~~~
 Surge 4.0 :
 [Script]
@@ -31,7 +31,7 @@ QX or Surge MITM = api.m.jd.com
 */
 
 var log = true; //是否开启日志, false则关闭
-var stop = 200; //自定义延迟签到,单位毫秒,(如填200则每个接口延迟0.2秒执行),默认无延迟
+var stop = 0; //自定义延迟签到,单位毫秒,(如填200则每个接口延迟0.2秒执行),默认无延迟
 var $nobyda = nobyda();
 var KEY = $nobyda.read("CookieJD");
 
@@ -47,7 +47,6 @@ async function all() {//签到模块相互独立,您可注释某一行以禁用�
   await JingDongBean(stop); //京东京豆
   await JingRongBean(stop); //金融京豆
   await JingRongSteel(stop); //金融钢镚
-  await JingDongTurn1(stop); //京东转盘
   await JingDongTurn(stop); //京东转盘
   await JRDoubleSign(stop); //金融双签
   await JDGroceryStore(stop); //京东超市
@@ -60,15 +59,17 @@ async function all() {//签到模块相互独立,您可注释某一行以禁用�
   await JingDongWomen(stop); //京东女装馆
   await JingDongCash(stop); //京东现金红包
   await JingDongShoes(stop); //京东鞋靴馆
-  //await JingRSeeAds(stop); //金融看广告
+  await JingRSeeAds(stop); //金融看广告
   await JingRongGame(stop); //金融游戏大厅
   await JingDongLive(stop); //京东智能生活馆
+  await JingDongClean(stop); //京东清洁馆
   await JDPersonalCare(stop); //京东个人护理馆
-  await JDMagicCube(stop); //京东小魔方
   await JingDongPrize(stop); //京东抽大奖
+  await JingDongShake(stop); //京东摇一摇
+
+  await JingDongTurn1(stop); //京东转盘
   await JingDongShake1(stop); //京东摇一摇
   await JingDongShake2(stop); //京东摇一摇
-  await JingDongShake(stop); //京东摇一摇
 
   await TotalSteel(); //总钢镚查询
   await TotalCash(); //总红包查询
@@ -78,8 +79,8 @@ async function all() {//签到模块相互独立,您可注释某一行以禁用�
 
 var merge = {
   JDBean:  {success:0,fail:0,bean:0,steel:0,notify:''},
-  JDTurn1: {success:0,fail:0,bean:0,steel:0,notify:''},
   JDTurn:  {success:0,fail:0,bean:0,steel:0,notify:''},
+  JDTurn1: {success:0,fail:0,bean:0,steel:0,notify:''},
   JRBean:  {success:0,fail:0,bean:0,steel:0,notify:''},
   JRDSign: {success:0,fail:0,bean:0,steel:0,notify:''},
   JDGStore:{success:0,fail:0,bean:0,steel:0,notify:''},
@@ -91,11 +92,11 @@ var merge = {
   JDMakeup:{success:0,fail:0,bean:0,steel:0,notify:''},
   JDWomen: {success:0,fail:0,bean:0,steel:0,notify:''},
   JDShoes: {success:0,fail:0,bean:0,steel:0,notify:''},
-  JDCube:  {success:0,fail:0,bean:0,steel:0,notify:''},
   JRGame:  {success:0,fail:0,bean:0,steel:0,notify:''},
   JRSeeAds:{success:0,fail:0,bean:0,steel:0,notify:''},
   JDLive:  {success:0,fail:0,bean:0,steel:0,notify:''},
   JDCare:  {success:0,fail:0,bean:0,steel:0,notify:''},
+  JDClean: {success:0,fail:0,bean:0,steel:0,notify:''},
   JDPrize: {success:0,fail:0,bean:0,steel:0,notify:'',key:0},
   JRSteel: {success:0,fail:0,bean:0,steel:0,notify:'',TSteel:0},
   JDCash:  {success:0,fail:0,bean:0,steel:0,notify:'',Cash:0,TCash:0},
@@ -278,66 +279,66 @@ function JingDongTurn(s) {
 
 function JingDongTurn1(s) {
 
-    return new Promise(resolve => { setTimeout(() => {
-      const JDTUrl = {
-        url: 'https://api.m.jd.com/client.action?functionId=lotteryDraw&body=%7B%22actId%22%3A%22jgpqtzjhvaoym%22%2C%22appSource%22%3A%22jdhome%22%2C%22lotteryCode%22%3A%224wwzdq7wkqx2usx4g5i2nu5ho4auto4qxylblkxacm7jqdsltsepmgpn3b2hgyd7hiawzpccizuck%22%7D&appid=ld',
-        headers: {
-          Cookie: KEY,
-        }
-      };
-  
-      $nobyda.get(JDTUrl, function(error, response, data) {
-        try {
-          if (error) {
-            merge.JDTurn1.notify = "京东商城-转盘: 签到接口请求失败 ‼️‼️"
+  return new Promise(resolve => { setTimeout(() => {
+    const JDTUrl = {
+      url: 'https://api.m.jd.com/client.action?functionId=lotteryDraw&body=%7B%22actId%22%3A%22jgpqtzjhvaoym%22%2C%22appSource%22%3A%22jdhome%22%2C%22lotteryCode%22%3A%224wwzdq7wkqx2usx4g5i2nu5ho4auto4qxylblkxacm7jqdsltsepmgpn3b2hgyd7hiawzpccizuck%22%7D&appid=ld',
+      headers: {
+        Cookie: KEY,
+      }
+    };
+
+    $nobyda.get(JDTUrl, function(error, response, data) {
+      try {
+        if (error) {
+          merge.JDTurn1.notify = "京东商城-转盘: 签到接口请求失败 ‼️‼️"
+          merge.JDTurn1.fail = 1
+        } else {
+          const cc = JSON.parse(data)
+          if (cc.code == 3) {
+            if (log) console.log("京东转盘Cookie失效response: \n" + data)
+            merge.JDTurn1.notify = "京东商城-转盘: 失败, 原因: Cookie失效‼️"
             merge.JDTurn1.fail = 1
           } else {
-            const cc = JSON.parse(data)
-            if (cc.code == 3) {
-              if (log) console.log("京东转盘Cookie失效response: \n" + data)
-              merge.JDTurn1.notify = "京东商城-转盘: 失败, 原因: Cookie失效‼️"
+            if (data.match(/(\"T216\"|活动结束)/)) {
+              merge.JDTurn1.notify = "京东商城-转盘: 失败, 原因: 活动结束 ⚠️"
               merge.JDTurn1.fail = 1
             } else {
-              if (data.match(/(\"T216\"|活动结束)/)) {
-                merge.JDTurn1.notify = "京东商城-转盘: 失败, 原因: 活动结束 ⚠️"
-                merge.JDTurn1.fail = 1
+              if (data.match(/(京豆|\"910582\")/)) {
+                if (log) console.log("京东商城-转盘签到成功response: \n" + data)
+                merge.JDTurn1.notify = "京东商城-转盘: 成功, 明细: " + cc.data.prizeSendNumber + "京豆 🐶"
+                merge.JDTurn1.success = 1
+                merge.JDTurn1.bean = cc.data.prizeSendNumber
               } else {
-                if (data.match(/(京豆|\"910582\")/)) {
-                  if (log) console.log("京东商城-转盘签到成功response: \n" + data)
-                  merge.JDTurn1.notify = "京东商城-转盘: 成功, 明细: " + cc.data.prizeSendNumber + "京豆 🐶"
+                if (log) console.log("京东商城-转盘签到失败response: \n" + data)
+                if (data.match(/chances\":\"1\".+未中奖/)) {
+                  setTimeout(function() {
+                    JingDongTurn1()
+                  }, 2000)
+                } else if (data.match(/chances\":\"0\".+未中奖/)) {
+                  merge.JDTurn1.notify = "京东商城-转盘: 成功, 状态: 未中奖 🐶"
                   merge.JDTurn1.success = 1
-                  merge.JDTurn1.bean = cc.data.prizeSendNumber
+                } else if (data.match(/(T215|次数为0)/)) {
+                  merge.JDTurn1.notify = "京东商城-转盘: 失败, 原因: 已转过 ⚠️"
+                  merge.JDTurn1.fail = 1
+                } else if (data.match(/(T210|密码)/)) {
+                  merge.JDTurn1.notify = "京东商城-转盘: 失败, 原因: 无支付密码 ⚠️"
+                  merge.JDTurn1.fail = 1
                 } else {
-                  if (log) console.log("京东商城-转盘签到失败response: \n" + data)
-                  if (data.match(/chances\":\"1\".+未中奖/)) {
-                    setTimeout(function() {
-                      JingDongTurn1()
-                    }, 2000)
-                  } else if (data.match(/chances\":\"0\".+未中奖/)) {
-                    merge.JDTurn1.notify = "京东商城-转盘: 成功, 状态: 未中奖 🐶"
-                    merge.JDTurn1.success = 1
-                  } else if (data.match(/(T215|次数为0)/)) {
-                    merge.JDTurn1.notify = "京东商城-转盘: 失败, 原因: 已转过 ⚠️"
-                    merge.JDTurn1.fail = 1
-                  } else if (data.match(/(T210|密码)/)) {
-                    merge.JDTurn1.notify = "京东商城-转盘: 失败, 原因: 无支付密码 ⚠️"
-                    merge.JDTurn1.fail = 1
-                  } else {
-                    merge.JDTurn1.notify = "京东商城-转盘: 失败, 原因: 未知 ⚠️"
-                    merge.JDTurn1.fail = 1
-                  }
+                  merge.JDTurn1.notify = "京东商城-转盘: 失败, 原因: 未知 ⚠️"
+                  merge.JDTurn1.fail = 1
                 }
               }
             }
           }
-          resolve('done')
-        } catch (eor) {
-          $nobyda.notify("京东商城-转盘" + eor.name + "‼️", JSON.stringify(eor), eor.message)
-          resolve('done')
         }
-      })}, s)
-    });
-  }
+        resolve('done')
+      } catch (eor) {
+        $nobyda.notify("京东商城-转盘" + eor.name + "‼️", JSON.stringify(eor), eor.message)
+        resolve('done')
+      }
+    })}, s)
+  });
+}
 
 function JingRongBean(s) {
 
@@ -620,133 +621,133 @@ function JingDongShake(s) {
 
 function JingDongShake1(s) {
 
-    return new Promise(resolve => { setTimeout(() => {
-      const JDSh = {
-        url: 'https://api.m.jd.com/client.action?appid=vip_h5&functionId=vvipclub_shaking',
-        headers: {
-          Cookie: KEY,
-        }
-      };
-  
-      $nobyda.get(JDSh, function(error, response, data) {
-        try {
-          if (error) {
-            merge.JDShake1.notify = "京东商城-摇摇: 签到接口请求失败 ‼️‼️\n" + error
-            merge.JDShake1.fail = 1
-          } else {
-            const cc = JSON.parse(data)
-            if (data.match(/prize/)) {
-              if (log) console.log("京东商城-摇一摇签到成功response: \n" + data)
-              if (cc.data.prizeBean) {
-                merge.JDShake1.notify = "京东商城-摇摇: 成功, 明细: " + cc.data.prizeBean.count + "京豆 🐶"
-                merge.JDShake1.bean = cc.data.prizeBean.count
+  return new Promise(resolve => { setTimeout(() => {
+    const JDSh = {
+      url: 'https://api.m.jd.com/client.action?appid=vip_h5&functionId=vvipclub_shaking',
+      headers: {
+        Cookie: KEY,
+      }
+    };
+
+    $nobyda.get(JDSh, function(error, response, data) {
+      try {
+        if (error) {
+          merge.JDShake1.notify = "京东商城-摇摇: 签到接口请求失败 ‼️‼️\n" + error
+          merge.JDShake1.fail = 1
+        } else {
+          const cc = JSON.parse(data)
+          if (data.match(/prize/)) {
+            if (log) console.log("京东商城-摇一摇签到成功response: \n" + data)
+            if (cc.data.prizeBean) {
+              merge.JDShake1.notify = "京东商城-摇摇: 成功, 明细: " + cc.data.prizeBean.count + "京豆 🐶"
+              merge.JDShake1.bean = cc.data.prizeBean.count
+              merge.JDShake1.success = 1
+            } else {
+              if (cc.data.prizeCoupon) {
+                merge.JDShake1.notify = "京东商城-摇摇: 获得满" + cc.data.prizeCoupon.quota + "减" + cc.data.prizeCoupon.discount + "优惠券→ " + cc.data.prizeCoupon.limitStr
                 merge.JDShake1.success = 1
               } else {
-                if (cc.data.prizeCoupon) {
-                  merge.JDShake1.notify = "京东商城-摇摇: 获得满" + cc.data.prizeCoupon.quota + "减" + cc.data.prizeCoupon.discount + "优惠券→ " + cc.data.prizeCoupon.limitStr
-                  merge.JDShake1.success = 1
-                } else {
-                  merge.JDShake1.notify = "京东商城-摇摇: 失败, 原因: 未知 ⚠️"
-                  merge.JDShake1.fail = 1
-                }
-              }
-            } else {
-              if (log) console.log("京东商城-摇一摇签到失败response: \n" + data)
-              if (data.match(/true/)) {
-                merge.JDShake1.notify = "京东商城-摇摇: 成功, 明细: 无奖励 🐶"
-                merge.JDShake1.success = 1
-              } else {
-                if (data.match(/(无免费|8000005)/)) {
-                  merge.JDShake1.notify = "京东商城-摇摇: 失败, 原因: 已摇过 ⚠️"
-                  merge.JDShake1.fail = 1
-                } else if (data.match(/(未登录|101)/)) {
-                  merge.JDShake1.notify = "京东商城-摇摇: 失败, 原因: Cookie失效‼️"
-                  merge.JDShake1.fail = 1
-                } else {
-                  merge.JDShake1.notify = "京东商城-摇摇: 失败, 原因: 未知 ⚠️"
-                  merge.JDShake1.fail = 1
-                }
+                merge.JDShake1.notify = "京东商城-摇摇: 失败, 原因: 未知 ⚠️"
+                merge.JDShake1.fail = 1
               }
             }
-            //if (data.match(/totalBeanCount/)) {
-              //if (cc.data.luckyBox.totalBeanCount) {
-                //merge.JDShake.Qbear = cc.data.luckyBox.totalBeanCount
-              //}
-            //}
-          }
-          resolve('done')
-        } catch (eor) {
-          $nobyda.notify("京东商城-摇摇" + eor.name + "‼️", JSON.stringify(eor), eor.message)
-          resolve('done')
-        }
-      })}, s)
-    });
-  }
-
-  function JingDongShake2(s) {
-
-    return new Promise(resolve => { setTimeout(() => {
-      const JDSh = {
-        url: 'https://api.m.jd.com/client.action?appid=vip_h5&functionId=vvipclub_shaking',
-        headers: {
-          Cookie: KEY,
-        }
-      };
-  
-      $nobyda.get(JDSh, function(error, response, data) {
-        try {
-          if (error) {
-            merge.JDShake2.notify = "京东商城-摇摇: 签到接口请求失败 ‼️‼️\n" + error
-            merge.JDShake2.fail = 1
           } else {
-            const cc = JSON.parse(data)
-            if (data.match(/prize/)) {
-              if (log) console.log("京东商城-摇一摇签到成功response: \n" + data)
-              if (cc.data.prizeBean) {
-                merge.JDShake2.notify = "京东商城-摇摇: 成功, 明细: " + cc.data.prizeBean.count + "京豆 🐶"
-                merge.JDShake2.bean = cc.data.prizeBean.count
-                merge.JDShake2.success = 1
-              } else {
-                if (cc.data.prizeCoupon) {
-                  merge.JDShake2.notify = "京东商城-摇摇: 获得满" + cc.data.prizeCoupon.quota + "减" + cc.data.prizeCoupon.discount + "优惠券→ " + cc.data.prizeCoupon.limitStr
-                  merge.JDShake2.success = 1
-                } else {
-                  merge.JDShake2.notify = "京东商城-摇摇: 失败, 原因: 未知 ⚠️"
-                  merge.JDShake2.fail = 1
-                }
-              }
+            if (log) console.log("京东商城-摇一摇签到失败response: \n" + data)
+            if (data.match(/true/)) {
+              merge.JDShake1.notify = "京东商城-摇摇: 成功, 明细: 无奖励 🐶"
+              merge.JDShake1.success = 1
             } else {
-              if (log) console.log("京东商城-摇一摇签到失败response: \n" + data)
-              if (data.match(/true/)) {
-                merge.JDShake2.notify = "京东商城-摇摇: 成功, 明细: 无奖励 🐶"
-                merge.JDShake2.success = 1
+              if (data.match(/(无免费|8000005)/)) {
+                merge.JDShake1.notify = "京东商城-摇摇: 失败, 原因: 已摇过 ⚠️"
+                merge.JDShake1.fail = 1
+              } else if (data.match(/(未登录|101)/)) {
+                merge.JDShake1.notify = "京东商城-摇摇: 失败, 原因: Cookie失效‼️"
+                merge.JDShake1.fail = 1
               } else {
-                if (data.match(/(无免费|8000005)/)) {
-                  merge.JDShake2.notify = "京东商城-摇摇: 失败, 原因: 已摇过 ⚠️"
-                  merge.JDShake2.fail = 1
-                } else if (data.match(/(未登录|101)/)) {
-                  merge.JDShake2.notify = "京东商城-摇摇: 失败, 原因: Cookie失效‼️"
-                  merge.JDShake2.fail = 1
-                } else {
-                  merge.JDShake2.notify = "京东商城-摇摇: 失败, 原因: 未知 ⚠️"
-                  merge.JDShake2.fail = 1
-                }
+                merge.JDShake1.notify = "京东商城-摇摇: 失败, 原因: 未知 ⚠️"
+                merge.JDShake1.fail = 1
               }
             }
-            //if (data.match(/totalBeanCount/)) {
-              //if (cc.data.luckyBox.totalBeanCount) {
-                //merge.JDShake.Qbear = cc.data.luckyBox.totalBeanCount
-              //}
-            //}
           }
-          resolve('done')
-        } catch (eor) {
-          $nobyda.notify("京东商城-摇摇" + eor.name + "‼️", JSON.stringify(eor), eor.message)
-          resolve('done')
+          //if (data.match(/totalBeanCount/)) {
+            //if (cc.data.luckyBox.totalBeanCount) {
+              //merge.JDShake.Qbear = cc.data.luckyBox.totalBeanCount
+            //}
+          //}
         }
-      })}, s)
-    });
-  }
+        resolve('done')
+      } catch (eor) {
+        $nobyda.notify("京东商城-摇摇" + eor.name + "‼️", JSON.stringify(eor), eor.message)
+        resolve('done')
+      }
+    })}, s)
+  });
+}
+
+function JingDongShake2(s) {
+
+  return new Promise(resolve => { setTimeout(() => {
+    const JDSh = {
+      url: 'https://api.m.jd.com/client.action?appid=vip_h5&functionId=vvipclub_shaking',
+      headers: {
+        Cookie: KEY,
+      }
+    };
+
+    $nobyda.get(JDSh, function(error, response, data) {
+      try {
+        if (error) {
+          merge.JDShake2.notify = "京东商城-摇摇: 签到接口请求失败 ‼️‼️\n" + error
+          merge.JDShake2.fail = 1
+        } else {
+          const cc = JSON.parse(data)
+          if (data.match(/prize/)) {
+            if (log) console.log("京东商城-摇一摇签到成功response: \n" + data)
+            if (cc.data.prizeBean) {
+              merge.JDShake2.notify = "京东商城-摇摇: 成功, 明细: " + cc.data.prizeBean.count + "京豆 🐶"
+              merge.JDShake2.bean = cc.data.prizeBean.count
+              merge.JDShake2.success = 1
+            } else {
+              if (cc.data.prizeCoupon) {
+                merge.JDShake2.notify = "京东商城-摇摇: 获得满" + cc.data.prizeCoupon.quota + "减" + cc.data.prizeCoupon.discount + "优惠券→ " + cc.data.prizeCoupon.limitStr
+                merge.JDShake2.success = 1
+              } else {
+                merge.JDShake2.notify = "京东商城-摇摇: 失败, 原因: 未知 ⚠️"
+                merge.JDShake2.fail = 1
+              }
+            }
+          } else {
+            if (log) console.log("京东商城-摇一摇签到失败response: \n" + data)
+            if (data.match(/true/)) {
+              merge.JDShake2.notify = "京东商城-摇摇: 成功, 明细: 无奖励 🐶"
+              merge.JDShake2.success = 1
+            } else {
+              if (data.match(/(无免费|8000005)/)) {
+                merge.JDShake2.notify = "京东商城-摇摇: 失败, 原因: 已摇过 ⚠️"
+                merge.JDShake2.fail = 1
+              } else if (data.match(/(未登录|101)/)) {
+                merge.JDShake2.notify = "京东商城-摇摇: 失败, 原因: Cookie失效‼️"
+                merge.JDShake2.fail = 1
+              } else {
+                merge.JDShake2.notify = "京东商城-摇摇: 失败, 原因: 未知 ⚠️"
+                merge.JDShake2.fail = 1
+              }
+            }
+          }
+          //if (data.match(/totalBeanCount/)) {
+            //if (cc.data.luckyBox.totalBeanCount) {
+              //merge.JDShake.Qbear = cc.data.luckyBox.totalBeanCount
+            //}
+          //}
+        }
+        resolve('done')
+      } catch (eor) {
+        $nobyda.notify("京东商城-摇摇" + eor.name + "‼️", JSON.stringify(eor), eor.message)
+        resolve('done')
+      }
+    })}, s)
+  });
+}
 
 function JDGroceryStore(s) {
 
@@ -1169,6 +1170,68 @@ function JingDMakeup(s) {
   });
 }
 
+function JingDongClean(s) {
+
+  return new Promise(resolve => { setTimeout(() => {
+    const JDCUUrl = {
+      url: 'https://api.m.jd.com/client.action?functionId=userSign',
+      headers: {
+        Cookie: KEY,
+      },
+      body: "body=%7B%22riskParam%22%3A%7B%22eid%22%3A%22O5X6JYMZTXIEX4VBCBWEM5PTIZV6HXH7M3AI75EABM5GBZYVQKRGQJ5A2PPO5PSELSRMI72SYF4KTCB4NIU6AZQ3O6C3J7ZVEP3RVDFEBKVN2RER2GTQ%22%2C%22shshshfpb%22%3A%22v1%5C%2FzMYRjEWKgYe%2BUiNwEvaVlrHBQGVwqLx4CsS9PH1s0s0Vs9AWk%2B7vr9KSHh3BQd5NTukznDTZnd75xHzonHnw%3D%3D%22%2C%22pageClickKey%22%3A%22Babel_Sign%22%2C%22childActivityUrl%22%3A%22-1%22%7D%2C%22url%22%3A%22%22%2C%22params%22%3A%22%7B%5C%22enActK%5C%22%3A%5C%22HvENi4DscTLaP0AcMuJcj8znpSOv6847H9NkrtycVlIaZs%5C%2Fn4coLNw%3D%3D%5C%22%2C%5C%22isFloatLayer%5C%22%3Afalse%2C%5C%22ruleSrv%5C%22%3A%5C%2200561054_29747880_t1%5C%22%2C%5C%22signId%5C%22%3A%5C%2231CgSud60mEaZs%5C%2Fn4coLNw%3D%3D%5C%22%7D%22%2C%22geo%22%3A%7B%22lng%22%3A%220.000000%22%2C%22lat%22%3A%220.000000%22%7D%7D&client=apple&clientVersion=8.5.0&d_brand=apple&openudid=1fce88cd05c42fe2b054e846f11bdf33f016d676&sign=cb5945883dc459336f107d30e6abc60f&st=1581531991265&sv=121"
+    };
+
+    $nobyda.post(JDCUUrl, function(error, response, data) {
+      try {
+        if (error) {
+          merge.JDClean.notify = "京东商城-清洁: 签到接口请求失败 ‼️‼️"
+          merge.JDClean.fail = 1
+        } else {
+          const cc = JSON.parse(data)
+          if (data.match(/签到成功/)) {
+            if (log) console.log("京东商城-清洁签到成功response: \n" + data)
+            if (data.match(/(\"text\":\"\d+京豆\")/)) {
+              beanQuantity = cc.awardList[0].text.match(/\d+/)
+              merge.JDClean.notify = "京东商城-清洁: 成功, 明细: " + beanQuantity + "京豆 🐶"
+              merge.JDClean.bean = beanQuantity
+              merge.JDClean.success = 1
+            } else {
+              merge.JDClean.notify = "京东商城-清洁: 成功, 明细: 无京豆 🐶"
+              merge.JDClean.success = 1
+            }
+          } else {
+            if (log) console.log("京东商城-清洁签到失败response: \n" + data)
+            if (data.match(/(已签到|已领取)/)) {
+              merge.JDClean.notify = "京东商城-清洁: 失败, 原因: 已签过 ⚠️"
+              merge.JDClean.fail = 1
+            } else {
+              if (data.match(/(不存在|已结束|未开始)/)) {
+                merge.JDClean.notify = "京东商城-清洁: 失败, 原因: 活动已结束 ⚠️"
+                merge.JDClean.fail = 1
+              } else {
+                if (cc.code == 3) {
+                  merge.JDClean.notify = "京东商城-清洁: 失败, 原因: Cookie失效‼️"
+                  merge.JDClean.fail = 1
+                } else if (cc.code == "600") {
+                  merge.JDClean.notify = "京东商城-清洁: 失败, 原因: 认证失败 ⚠️"
+                  merge.JDClean.fail = 1
+                } else {
+                  merge.JDClean.notify = "京东商城-清洁: 失败, 原因: 未知 ⚠️"
+                  merge.JDClean.fail = 1
+                }
+              }
+            }
+          }
+        }
+        resolve('done')
+      } catch (eor) {
+        $nobyda.notify("京东商城-清洁" + eor.name + "‼️", JSON.stringify(eor), eor.message)
+        resolve('done')
+      }
+    })}, s)
+  });
+}
+
 function JingDongWomen(s) {
 
   return new Promise(resolve => { setTimeout(() => {
@@ -1407,63 +1470,6 @@ function JDPersonalCare(s) {
         resolve('done')
       } catch (eor) {
         $nobyda.notify("京东商城-个护" + eor.name + "‼️", JSON.stringify(eor), eor.message)
-        resolve('done')
-      }
-    })}, s)
-  });
-}
-
-function JDMagicCube(s) {
-
-  return new Promise(resolve => { setTimeout(() => {
-    const JDMCUrl = {
-      url: 'https://api.m.jd.com/client.action?functionId=getNewsInteractionLotteryInfo&appid=smfe',
-      headers: {
-        Cookie: KEY,
-      }
-    };
-
-    $nobyda.get(JDMCUrl, function(error, response, data) {
-      try {
-        if (error) {
-          merge.JDCube.notify = "京东商城-魔方: 签到接口请求失败 ‼️‼️"
-          merge.JDCube.fail = 1
-        } else {
-          const cc = JSON.parse(data)
-          if (data.match(/(\"name\":)/)) {
-            if (log) console.log("京东商城-魔方签到成功response: \n" + data)
-            if (data.match(/(\"name\":\"京豆\")/)) {
-              merge.JDCube.notify = "京东商城-魔方: 成功, 明细: " + cc.result.lotteryInfo.quantity + "京豆 🐶"
-              merge.JDCube.bean = cc.result.lotteryInfo.quantity
-              merge.JDCube.success = 1
-            } else {
-              merge.JDCube.notify = "京东商城-魔方: 成功, 明细: " + cc.result.lotteryInfo.name + " 🎉"
-              merge.JDCube.success = 1
-            }
-          } else {
-            if (log) console.log("京东商城-魔方签到失败response: \n" + data)
-            if (data.match(/(一闪而过|已签到|已领取)/)) {
-              merge.JDCube.notify = "京东商城-魔方: 失败, 原因: 已签过 ⚠️"
-              merge.JDCube.fail = 1
-            } else {
-              if (data.match(/(不存在|已结束)/)) {
-                merge.JDCube.notify = "京东商城-魔方: 失败, 原因: 活动已结束 ⚠️"
-                merge.JDCube.fail = 1
-              } else {
-                if (data.match(/(\"code\":3)/)) {
-                  merge.JDCube.notify = "京东商城-魔方: 失败, 原因: Cookie失效‼️"
-                  merge.JDCube.fail = 1
-                } else {
-                  merge.JDCube.notify = "京东商城-魔方: 失败, 原因: 未知 ⚠️"
-                  merge.JDCube.fail = 1
-                }
-              }
-            }
-          }
-        }
-        resolve('done')
-      } catch (eor) {
-        $nobyda.notify("京东商城-魔方" + eor.name + "‼️", JSON.stringify(eor), eor.message)
         resolve('done')
       }
     })}, s)
