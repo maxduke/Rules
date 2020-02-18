@@ -100,9 +100,9 @@ var merge = {
   JDPrize: {success:0,fail:0,bean:0,steel:0,notify:'',key:0},
   JRSteel: {success:0,fail:0,bean:0,steel:0,notify:'',TSteel:0},
   JDCash:  {success:0,fail:0,bean:0,steel:0,notify:'',Cash:0,TCash:0},
+  JDShake: {success:0,fail:0,bean:0,steel:0,notify:'',Qbear:0},
   JDShake1:{success:0,fail:0,bean:0,steel:0,notify:''},
-  JDShake2:{success:0,fail:0,bean:0,steel:0,notify:''},
-  JDShake: {success:0,fail:0,bean:0,steel:0,notify:'',Qbear:0}
+  JDShake2:{success:0,fail:0,bean:0,steel:0,notify:''}
 }
 
 function notify() {
