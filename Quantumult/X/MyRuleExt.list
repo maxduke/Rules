@@ -17,10 +17,10 @@ DOMAIN-SUFFIX,ipahub.com,PROXY
 DOMAIN-SUFFIX,redd.it,PROXY
 DOMAIN-SUFFIX,readitlaterlist.com,PROXY
 // Wuyouxing
-DOMAIN-SUFFIX,cmpassport.com,PROXY
+//DOMAIN-SUFFIX,cmpassport.com,PROXY
 DOMAIN-SUFFIX,jegotrip.com.cn,PROXY
 DOMAIN-SUFFIX,jegotrip.com,PROXY
-//DOMAIN-SUFFIX,umeng.com,PROXY
-//DOMAIN-SUFFIX,analysis.tratao.com,PROXY
-//DOMAIN-SUFFIX,icloud-content.com,PROXY
-//DOMAIN-SUFFIX,wannos.127.net,PROXY
+DOMAIN-SUFFIX,umeng.com,PROXY
+DOMAIN-SUFFIX,analysis.tratao.com,PROXY
+DOMAIN-SUFFIX,icloud-content.com,PROXY
+DOMAIN-SUFFIX,wannos.127.net,PROXY
