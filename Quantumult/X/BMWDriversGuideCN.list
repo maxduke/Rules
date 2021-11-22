@@ -1,3 +1,3 @@
 hostname = bao.bmwgroup.com
-#BMW Driver's Guide download CN version in EN envirnoment
+#BMW Driver's Guide download zh-CN version in English envirnoment
 ^https://bao.bmwgroup.com/bamobile/manual/.* url response-body locale="zh-CN" response-body locale="en-US"
