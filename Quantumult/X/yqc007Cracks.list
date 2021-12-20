@@ -1,4 +1,4 @@
-hostname = www.91gao1.com, app.weilaixushi.com, api.orientlion.com, app.qdjdswkj.com, interface.my91apiqc.com:8080, *.chuniao.*, api-hlw.*.com, api.lvyouynn.com, api.spinalavm.com, apiw.9waquan.com, *.ksapi*, api.(md-ddd1|yh-bzd).com, api.sumsun.top, api.gzbbcg.com, api.kjregister.com, api.klettdayeare.com, notability.com, api.mtaoapi006.*, api.polarisoffice.com, luping.cushuikeji.cn, *.tbrapi*, apiios_dq.xiangha.com 
+hostname = www.91gao1.com, app.weilaixushi.com, api.orientlion.com, app.qdjdswkj.com, interface.my91apiqc.com:8080, *.chuniao.*, api-hlw.*.com, api.lvyouynn.com, api.spinalavm.com, apiw.9waquan.com, *.ksapi*, api.(md-ddd1|yh-bzd).com, *.youbangjiazheng.com, api.sumsun.top, api.gzbbcg.com, api.kjregister.com, api.klettdayeare.com, notability.com, api.mtaoapi006.*, api.polarisoffice.com, luping.cushuikeji.cn, *.tbrapi*, apiios_dq.xiangha.com, apiw.sshfax.com 
 
 # 91搞网站破解收费
 ^https?:\/\/www\.91gao1\.com\/api\/v1\/article\?page.+ url script-response-body https://raw.githubusercontent.com/yqc007/QuantumultX/master/91GVCrack.js
@@ -26,6 +26,10 @@ hostname = www.91gao1.com, app.weilaixushi.com, api.orientlion.com, app.qdjdswkj
 # 麻豆视频解锁会员
 ^https?:\/\/api\.(md-ddd1|yh-bzd)\.com\/api\/web\/.+ url script-request-header https://raw.githubusercontent.com/yqc007/QuantumultX/master/MDSPCrack.js
 
+# 蜜桃视频解锁无限次数
+\/t\w{4}\/\d\/t\/ url 307 /token/aa1dceb9b04740e2c09623342303c6ef/t/
+^https?:\/\/.*\.youbangjiazheng\.com\/api\/Video\/m3u8\/id.+ url script-request-header https://raw.githubusercontent.com/yqc007/QuantumultX/master/MTSPCrack.js
+
 # 新春水堂解锁会员
 ^https?:\/\/api\.(sumsun|gzbbcg|kjregister|klettdayeare)\.\w{3}\/api\/user\/profile\/$ url script-response-body https://raw.githubusercontent.com/yqc007/QuantumultX/master/NCSTCrack.js
 ^https?:\/\/(time\.tfbeta\.top\/api\/app\/info|api\..+\/api\/(vip\/newshow|banner\/show|version\/show\/1))$ url reject-200
@@ -47,3 +51,7 @@ hostname = www.91gao1.com, app.weilaixushi.com, api.orientlion.com, app.qdjdswkj
 
 # 烘焙小屋解锁会员
 ^https?:\/\/apiios_dq\.xiangha\.com\/v4\/(dish\/info|User\/getUserData)$ url script-response-body https://raw.githubusercontent.com/yqc007/QuantumultX/master/XiangHaBakeProCrack.js
+
+# 硬汉视频解锁会员
+^https?:\/\/apiw\.sshfax\.com\/sw1\/.+ url script-request-header https://raw.githubusercontent.com/yqc007/QuantumultX/master/YHSPCrack.js
+^https?:\/\/apiw\.sshfax\.com\/sw1\/login$ url response-body token": "(.*?)" response-body token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtZW1iZXJfaWQiOiJJTjE3NzMyOTAiLCJkZXZpY2VfaWQiOiIwNDNENkRGMi1CODVGLTQ1OUUtQjZEMC03NTBGMjI2RTMyRkQiLCJlbWFpbCI6IjEwOTQzODA1MzFAcXEuY29tIiwiZXhwIjoxNjQwMzQyMzIwfQ.q_V8EUpxdIjVcoW2wHof9tIPA1Lv0_Y8uMdTO-A3N6E"
