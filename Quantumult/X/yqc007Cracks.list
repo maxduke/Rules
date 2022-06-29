@@ -1,4 +1,7 @@
-hostname = www.91gao1.com, app.weilaixushi.com, api.orientlion.com, app.qdjdswkj.com, interface.my91apiqc.com:8080, *.chuniao.*, api-hlw.*.com, api.lvyouynn.com, api.spinalavm.com, apiw.9waquan.com, *.ksapi*, api.(md-ddd1|yh-bzd).com, *.youbangjiazheng.com, api.sumsun.top, api.gzbbcg.com, api.kjregister.com, api.klettdayeare.com, notability.com, api.mtaoapi006.*, api.polarisoffice.com, luping.cushuikeji.cn, *.tbrapi*, apiios_dq.xiangha.com, apiw.sshfax.com 
+hostname = api.tidal.com, www.91gao1.com, app.weilaixushi.com, api.orientlion.com, app.qdjdswkj.com, interface.my91apiqc.com:8080, *.chuniao.*, api-hlw.*.com, api.lvyouynn.com, api.spinalavm.com, apiw.9waquan.com, *.ksapi*, api.(md-ddd1|yh-bzd).com, *.youbangjiazheng.com, api.sumsun.top, api.gzbbcg.com, api.kjregister.com, api.klettdayeare.com, notability.com, api.mtaoapi006.*, api.polarisoffice.com, luping.cushuikeji.cn, *.tbrapi*, apiios_dq.xiangha.com, apiw.sshfax.com 
+
+# > TIDAL解锁HiFi Plus
+^https?:\/\/api\.tidal\.com\/v1\/(pages\/album|(user|track|page)s\/(\d+)\/(state|subscription|lyrics|onboarding|playbackinfopostpaywall)) url script-request-header https://raw.githubusercontent.com/yqc007/QuantumultX/master/TIDALHiFiPlusCrack.js
 
 # 91搞网站破解收费
 ^https?:\/\/www\.91gao1\.com\/api\/v1\/article\?page.+ url script-response-body https://raw.githubusercontent.com/yqc007/QuantumultX/master/91GVCrack.js
