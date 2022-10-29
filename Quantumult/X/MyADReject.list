@@ -2,3 +2,5 @@
 host,ocsp.apple.com,REJECT
 host,ocsp.digicert.com,REJECT
 host,isrg.trustid.ocsp.identrust.com,REJECT
+// 拦截100
+host,ntb.lanjie100.com,REJECT
