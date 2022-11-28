@@ -1,29 +1,31 @@
 // MyDirect
 DOMAIN-SUFFIX,loopop.net,MyDirect
+// Duolingo
+DOMAIN-KEYWORD,duolingo,MyProxy
 //
-DOMAIN-SUFFIX,muramura.tv,PROXY
-DOMAIN-SUFFIX,rapidgator.net,PROXY
-DOMAIN-SUFFIX,91porn.com,PROXY
-DOMAIN-SUFFIX,avdvd.tv,PROXY
-DOMAIN-SUFFIX,btdigg.org,PROXY
-DOMAIN-SUFFIX,mm-cg.com,PROXY
-DOMAIN-SUFFIX,e-hentai.org,PROXY
-DOMAIN-SUFFIX,ocnttv.com,PROXY
-DOMAIN-SUFFIX,5itv.tv,PROXY
-DOMAIN-SUFFIX,softsmirror.cf,PROXY
+DOMAIN-SUFFIX,muramura.tv,MyProxy
+DOMAIN-SUFFIX,rapidgator.net,MyProxy
+DOMAIN-SUFFIX,91porn.com,MyProxy
+DOMAIN-SUFFIX,avdvd.tv,MyProxy
+DOMAIN-SUFFIX,btdigg.org,MyProxy
+DOMAIN-SUFFIX,mm-cg.com,MyProxy
+DOMAIN-SUFFIX,e-hentai.org,MyProxy
+DOMAIN-SUFFIX,ocnttv.com,MyProxy
+DOMAIN-SUFFIX,5itv.tv,MyProxy
+DOMAIN-SUFFIX,softsmirror.cf,MyProxy
 // iPAStore
-USER-AGENT,ipastorel*,PROXY
-DOMAIN-SUFFIX,devmyi.net,PROXY
-DOMAIN-SUFFIX,devmyi.com,PROXY
-DOMAIN-SUFFIX,ipahub.com,PROXY
+USER-AGENT,ipastorel*,MyProxy
+DOMAIN-SUFFIX,devmyi.net,MyProxy
+DOMAIN-SUFFIX,devmyi.com,MyProxy
+DOMAIN-SUFFIX,ipahub.com,MyProxy
 // GFWExt
-DOMAIN-SUFFIX,redd.it,PROXY
-DOMAIN-SUFFIX,readitlaterlist.com,PROXY
+DOMAIN-SUFFIX,redd.it,MyProxy
+DOMAIN-SUFFIX,readitlaterlist.com,MyProxy
 // Wuyouxing
-//DOMAIN-SUFFIX,cmpassport.com,PROXY
-DOMAIN-SUFFIX,jegotrip.com.cn,PROXY
-DOMAIN-SUFFIX,jegotrip.com,PROXY
-DOMAIN-SUFFIX,umeng.com,PROXY
-DOMAIN-SUFFIX,analysis.tratao.com,PROXY
-DOMAIN-SUFFIX,icloud-content.com,PROXY
-DOMAIN-SUFFIX,wannos.127.net,PROXY
+//DOMAIN-SUFFIX,cmpassport.com,MyProxy
+DOMAIN-SUFFIX,jegotrip.com.cn,MyProxy
+DOMAIN-SUFFIX,jegotrip.com,MyProxy
+DOMAIN-SUFFIX,umeng.com,MyProxy
+DOMAIN-SUFFIX,analysis.tratao.com,MyProxy
+DOMAIN-SUFFIX,icloud-content.com,MyProxy
+DOMAIN-SUFFIX,wannos.127.net,MyProxy
